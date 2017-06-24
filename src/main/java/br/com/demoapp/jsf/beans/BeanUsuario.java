@@ -15,6 +15,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
+import javax.inject.Inject;
 import org.primefaces.context.RequestContext;
 
 /**
@@ -34,6 +35,8 @@ public class BeanUsuario implements Serializable{
     @PostConstruct
     public void initialize(){
         this.createDataList();                        
+                
+        System.out.println("SERVLET REFERENCE = "+FacesContext.getCurrentInstance().toString());
     }    
 
     private void createDataList(){
