@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"                
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                template="/index.xhtml">
+
+    <ui:define name="template">
+        <form jsf:id="formMainUsuarios">
+            <ui:include src="includes/mainUsuarios.xhtml"></ui:include>
+        </form>
+    </ui:define>
+    <ui:define name="dialog">
+        <div id="mainModal" class="modal fade" role="dialog">
+            <div id="mainModalContent"  class="modal-dialog">
+                <div class="modal-content"><!-- Modal content-->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Dados do usuário</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12 col-sm-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <ui:include src="includes/editUsuarios.xhtml" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" onclick="$('#mainModal').modal('hide')">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

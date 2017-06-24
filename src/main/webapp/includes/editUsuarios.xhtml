@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:jsf="http://xmlns.jcp.org/jsf"
+                xmlns:p="http://primefaces.org/ui">
+    <h:form id="formEditUsuarios">
+        <h:panelGroup layout="block" class="container-fluid" id="usuarioPanel">        
+            <h:panelGroup layout="block" class="row no-padding">
+                <div class="modal-header">
+                    DADOS DO USUÁRIO
+                </div>
+                <div class="col-md-12">                
+                    <div class="alert-success">
+                        <label>ID: #{beanUsuario.usuario.id}</label><br />
+                        <label>NOME: #{beanUsuario.usuario.nome}</label><br />
+                        <label>EMAIL: #{beanUsuario.usuario.email}</label>
+                    </div>                                        
+                </div>                    
+            </h:panelGroup>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Novo Email</label>
+                    <input type="text" jsf:id="novoEmail" value="#{beanUsuario.novoEmail}" />
+                </div>                
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label>Novo Nome</label>
+                    <input type="text" jsf:id="novoNome" value="#{beanUsuario.novoNome}" />                
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <p:commandButton id="btnEnviarDadosUsuario" actionListener="#{beanUsuario.criarNovoUsuario()}" value="Enviar" />
+                </div>
+            </div>                
+            <h:panelGroup layout="block" class="container-fluid" id="novoEmailPanel">
+                <div class="row no-padding">
+                    <div class="col-md-12">
+                        <label>#{beanUsuario.usuario.nome}</label><br />
+                        <label>#{beanUsuario.usuario.email}</label>
+                    </div>
+                </div>
+            </h:panelGroup>
+        </h:panelGroup>
+    </h:form>
+</ui:composition>
+
